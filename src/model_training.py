@@ -28,10 +28,10 @@ rf.fit(X_train, y_train)
 y_pred = rf.predict(X_test)
 
 with Live(save_dvc_exp = True) as live:
-    live.log_metrics('accuracy',accuracy_score(y_test, y_pred))
-    live.log_metrics('precision',precision_score(y_test, y_pred))
-    live.log_metrics('recall',recall_score(y_test, y_pred))
-    live.log_metrics('f1_score',f1_score(y_test, y_pred))
+    live.log_metric('accuracy',accuracy_score(y_test, y_pred))
+    live.log_metric('precision',precision_score(y_test, y_pred))
+    live.log_metric('recall',recall_score(y_test, y_pred))
+    live.log_metric('f1_score',f1_score(y_test, y_pred))
 
-    live.log_params('n_estimators', n_estimators)
-    live.log_params('max_depth', max_depth)
+    live.log_param('n_estimators', n_estimators)
+    live.log_param('max_depth', max_depth)
